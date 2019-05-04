@@ -1,18 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  ListItem, ListItemContent, ListItemAction, IconButton, Checkbox,
-} from 'react-mdl';
+  MDBListGroupItem, MDBCol, MDBRow, MDBIcon,
+} from 'mdbreact';
+import Checkbox from '@material/react-checkbox';
 
-export default function TodoItem({ todoItem, removeItem }) {
+
+export default function TodoItem({ todoItem, removeItem, setTodoDone }) {
+  const doneStyles = () => {
+    if (todoItem.completed) {
+      return {
+        backgroundColor: '#bbb',
+        opacity: '0.5',
+      };
+    }
+    return {};
+  };
+
+
   return (
-    <ListItem>
-      <ListItemContent>{todoItem.text}</ListItemContent>
-      <ListItemAction>
-        <Checkbox label="Done" />
-        <IconButton label="Remove" colored accent name="remove" aria-label="Remove" type="button" onClick={() => removeItem(todoItem.id)} />
-      </ListItemAction>
-    </ListItem>
+    <MDBListGroupItem style={doneStyles()}>
+      <MDBRow>
+        <MDBCol size="10" style={{ display: 'flex', alignItems: 'center' }}>
+          {todoItem.text}
+        </MDBCol>
+        <MDBCol size="2" style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Checkbox type="checkbox" onClick={() => setTodoDone(todoItem.id)} disabled={todoItem.completed} />
+          <MDBIcon style={{ display: 'flex', alignItems: 'center' }} size="2x" className="red-text" label="delete" name="delete" aria-label="Remove" onClick={() => removeItem(todoItem.id)} icon="trash" />
+        </MDBCol>
+      </MDBRow>
+    </MDBListGroupItem>
   );
 }
 
@@ -23,4 +40,5 @@ TodoItem.propTypes = {
     completed: PropTypes.bool,
   }).isRequired,
   removeItem: PropTypes.func.isRequired,
+  setTodoDone: PropTypes.func.isRequired,
 };

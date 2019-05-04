@@ -1,21 +1,25 @@
 import React from 'react';
 import {
-  Layout, Header, Content, Grid, Cell,
-} from 'react-mdl';
+  MDBNavbar, MDBContainer, MDBCol, MDBNavbarBrand,
+} from 'mdbreact';
 
 export default function AppLayout(props) {
   return (
-    <Layout>
-      <Header title="Todo List" style={{ color: 'white' }} />
-      <Content>
-        <Grid>
-          <Cell col={3} />
-          <Cell col={6}>
-            {props.children}
-          </Cell>
-          <Cell col={3} />
-        </Grid>
-      </Content>
-    </Layout>
+    <>
+      <MDBNavbar color="indigo" dark expand="md">
+        <MDBContainer>
+          <MDBCol size="6">
+            <MDBNavbarBrand>
+              <h1 style={{ fontSize: '45px', marginBottom: '0px' }}>Todo List</h1>
+            </MDBNavbarBrand>
+          </MDBCol>
+        </MDBContainer>
+      </MDBNavbar>
+      <MDBContainer>
+        <MDBCol style={{ marginTop: '15px' }}>
+          {props.children}
+        </MDBCol>
+      </MDBContainer>
+    </>
   );
 }

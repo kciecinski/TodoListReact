@@ -1,13 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { List } from 'react-mdl';
+import { ListGroup } from 'mdbreact';
 import TodoItem from '../TodoItem/TodoItem';
 
-function TodoList({ todoItems, removeItem }) {
+function TodoList({ todoItems, removeItem, setTodoDone }) {
   return (
-    <List>
-      {todoItems.map(item => <TodoItem key={item.id} todoItem={item} removeItem={removeItem} />) }
-    </List>
+    <ListGroup>
+      {todoItems.map(item => (
+        <TodoItem
+          key={item.id}
+          todoItem={item}
+          removeItem={removeItem}
+          setTodoDone={setTodoDone}
+        />
+      )) }
+    </ListGroup>
   );
 }
 
@@ -16,6 +23,7 @@ TodoList.propTypes = {
     todoTextValue: PropTypes.string,
   })),
   removeItem: PropTypes.func.isRequired,
+  setTodoDone: PropTypes.func.isRequired,
 };
 TodoList.defaultProps = {
   todoItems: [],

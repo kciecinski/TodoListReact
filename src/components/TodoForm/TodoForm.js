@@ -1,23 +1,37 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { FABButton, Icon, Textfield } from 'react-mdl';
+import { MDBBtn, MDBIcon, MDBInput } from 'mdbreact';
 
 export default function TodoForm({ addTodo }) {
   const [todoText, setTodoText] = useState('');
   const inputEl = useRef(null);
 
   const submitForm = (text) => {
-    addTodo(text);
-    setTodoText('');
-    inputEl.current.inputRef.value = '';
+    if (text !== '') {
+      addTodo(text);
+      setTodoText('');
+      if (inputEl.current) inputEl.current.state.innerValue = '';
+    }
+  };
+
+  const handleKey = (e) => {
+    if (e.which === 13) {
+      submitForm(todoText);
+    }
   };
 
   return (
     <div>
-      <Textfield style={{ width: '100%' }} ref={inputEl} label="Add Tasks" onChange={e => setTodoText(e.target.value)} />
-      <FABButton style={{ float: 'right' }} aria-label="Add" onClick={() => submitForm(todoText)} type="submit" colored ripple>
-        <Icon name="add" />
-      </FABButton>
+      <MDBInput
+        onKeyPress={handleKey}
+        size="lg"
+        ref={inputEl}
+        label="Add Tasks"
+        onChange={e => setTodoText(e.target.value)}
+      />
+      <MDBBtn style={{ float: 'right', borderRadius: '100%', padding: '25px' }} color="pink" aria-label="Add" onClick={() => submitForm(todoText)} type="submit">
+        <MDBIcon icon="plus" size="2x" />
+      </MDBBtn>
     </div>
   );
 }

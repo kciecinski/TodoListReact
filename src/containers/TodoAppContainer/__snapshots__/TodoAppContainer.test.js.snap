@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoAppContainer /> matches snapshot 1`] = `
+<TodoAppContainer
+  addTodo={[MockFunction]}
+  removeItem={[MockFunction]}
+  setTodoDone={[MockFunction]}
+  todoItems={Array []}
+>
+  <AppLayout>
+    <Navbar
+      color="indigo"
+      dark={true}
+      expand="md"
+      scrolling={false}
+      tag="nav"
+    >
+      <nav
+        className="navbar navbar-dark navbar-expand-md indigo"
+        role="navigation"
+      >
+        <Container
+          fluid={false}
+          tag="div"
+        >
+          <div
+            className="container"
+          >
+            <Col
+              lg={null}
+              md={null}
+              size="6"
+              sm={null}
+              tag="div"
+              xl={null}
+              xs={null}
+            >
+              <div
+                className="col-6"
+              >
+                <NavbarBrand>
+                  <div
+                    className="navbar-brand"
+                  >
+                    <h1
+                      style={
+                        Object {
+                          "fontSize": "45px",
+                          "marginBottom": "0px",
+                        }
+                      }
+                    >
+                      Todo List
+                    </h1>
+                  </div>
+                </NavbarBrand>
+              </div>
+            </Col>
+          </div>
+        </Container>
+      </nav>
+    </Navbar>
+    <Container
+      fluid={false}
+      tag="div"
+    >
+      <div
+        className="container"
+      >
+        <Col
+          lg={null}
+          md={null}
+          sm={null}
+          style={
+            Object {
+              "marginTop": "15px",
+            }
+          }
+          tag="div"
+          xl={null}
+          xs={null}
+        >
+          <div
+            className="col"
+            style={
+              Object {
+                "marginTop": "15px",
+              }
+            }
+          >
+            <TodoList
+              removeItem={[Function]}
+              setTodoDone={[Function]}
+              todoItems={Array []}
+            >
+              <ListGroup
+                tag="ul"
+              >
+                <ul
+                  className="list-group"
+                />
+              </ListGroup>
+            </TodoList>
+            <TodoForm
+              addTodo={[Function]}
+            >
+              <div>
+                <Input
+                  className=""
+                  containerClass=""
+                  disabled={false}
+                  error=""
+                  filled={false}
+                  gap={false}
+                  group={false}
+                  icon=""
+                  iconBrand={false}
+                  iconClass=""
+                  iconLight={false}
+                  iconRegular={false}
+                  label="Add Tasks"
+                  labelClass=""
+                  onChange={[Function]}
+                  onKeyPress={[Function]}
+                  outline={false}
+                  size="lg"
+                  success=""
+                  tag="input"
+                  type="text"
+                  validate={false}
+                  valueDefault=""
+                >
+                  <div
+                    className="md-form form-lg"
+                  >
+                    <input
+                      className="form-control form-control-lg"
+                      disabled={false}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onInput={[Function]}
+                      onKeyPress={[Function]}
+                      type="text"
+                      value=""
+                    />
+                    <label
+                      className=""
+                      data-error=""
+                      data-success=""
+                      onClick={[Function]}
+                    >
+                      Add Tasks
+                    </label>
+                  </div>
+                </Input>
+                <Button
+                  aria-label="Add"
+                  color="pink"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "borderRadius": "100%",
+                      "float": "right",
+                      "padding": "25px",
+                    }
+                  }
+                  tag="button"
+                  type="submit"
+                >
+                  <button
+                    aria-label="Add"
+                    className="btn btn-pink Ripple-parent"
+                    onClick={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "borderRadius": "100%",
+                        "float": "right",
+                        "padding": "25px",
+                      }
+                    }
+                    type="submit"
+                  >
+                    <Fa
+                      border={false}
+                      brand={false}
+                      className=""
+                      fab={false}
+                      fal={false}
+                      far={false}
+                      fixed={false}
+                      flip=""
+                      icon="plus"
+                      inverse=""
+                      light={false}
+                      list={false}
+                      pull=""
+                      pulse={false}
+                      regular={false}
+                      rotate=""
+                      size="2x"
+                      spin={false}
+                      stack=""
+                    >
+                      <i
+                        className="fa fa-plus fa-2x"
+                      />
+                    </Fa>
+                    <Waves
+                      cursorPos={Object {}}
+                    >
+                      <div
+                        className="Ripple "
+                        style={
+                          Object {
+                            "height": "0px",
+                            "left": "0px",
+                            "top": "0px",
+                            "width": "0px",
+                          }
+                        }
+                      />
+                    </Waves>
+                  </button>
+                </Button>
+              </div>
+            </TodoForm>
+          </div>
+        </Col>
+      </div>
+    </Container>
+  </AppLayout>
+</TodoAppContainer>
+`;

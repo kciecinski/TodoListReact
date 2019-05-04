@@ -11,6 +11,13 @@ const todoReducer = (state, action) => {
       return [...state, action.item];
     case 'REMOVE_TODO':
       return state.filter(item => item.id !== action.id);
+    case 'SET_DONE':
+      return state.map((item) => {
+        if (item.id === action.id) {
+          return { ...item, completed: true };
+        }
+        return item;
+      });
     default:
       return state;
   }
@@ -28,9 +35,13 @@ export default function TodoAppContainer() {
     dispatch({ type: 'REMOVE_TODO', id });
   };
 
+  const setTodoDone = (id) => {
+    dispatch({ type: 'SET_DONE', id });
+  };
+
   return (
     <AppLayout>
-      <TodoList todoItems={todos} removeItem={removeTodo} />
+      <TodoList todoItems={todos} removeItem={removeTodo} setTodoDone={setTodoDone} />
       <TodoForm addTodo={addTodo} />
     </AppLayout>
   );
