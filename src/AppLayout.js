@@ -10,7 +10,7 @@ export default function AppLayout(props) {
         <MDBContainer>
           <MDBCol size="6">
             <MDBNavbarBrand>
-              <h1 style={{ fontSize: '45px', marginBottom: '0px' }}>Todo List</h1>
+              <h1 style={{ fontSize: '45px', marginBottom: '0px', fontWeight: '500' }}>Todo List</h1>
             </MDBNavbarBrand>
           </MDBCol>
         </MDBContainer>

@@ -28,6 +28,7 @@ export default function TodoForm({ addTodo }) {
         ref={inputEl}
         label="Add Tasks"
         onChange={e => setTodoText(e.target.value)}
+        style={{ marginTop: '3rem' }}
       />
       <MDBBtn style={{ float: 'right', borderRadius: '100%', padding: '25px' }} color="pink" aria-label="Add" onClick={() => submitForm(todoText)} type="submit">
         <MDBIcon icon="plus" size="2x" />
