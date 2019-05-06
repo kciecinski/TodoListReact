@@ -21,8 +21,8 @@ describe('<TodoList />', () => {
         text: 'casd',
       },
       ],
-      removeItem: jest.fn(),
-      setTodoDone: jest.fn(),
+      onRemoveItem: jest.fn(),
+      onSetItemCompleted: jest.fn(),
     };
     wrapper = shallow(<TodoList {...props} />);
   });

@@ -5,28 +5,39 @@ import {
 } from 'mdbreact';
 import Checkbox from '@material/react-checkbox';
 
-
-export default function TodoItem({ todoItem, removeItem, setTodoDone }) {
-  const doneStyles = () => {
-    if (todoItem.completed) {
-      return {
-        backgroundColor: '#bbb',
-        opacity: '0.5',
-      };
-    }
-    return {};
+const getItemStyles = (isCompleted) => {
+  if (isCompleted) {
+    return {
+      backgroundColor: '#bbb',
+      opacity: '0.5',
+      marginTop: '1.5em',
+    };
+  }
+  return {
+    marginTop: '1.5em',
   };
+};
 
+export default function TodoItem({ todoItem, onRemoveItem, onSetItemCompleted }) {
+  const isCompleted = todoItem.completed;
 
   return (
-    <MDBListGroupItem style={{ ...doneStyles(), marginTop: '10px' }}>
+    <MDBListGroupItem style={{ ...getItemStyles(isCompleted) }}>
       <MDBRow>
-        <MDBCol size="10" style={{ display: 'flex', alignItems: 'center' }}>
+        <MDBCol className="todo_items_left" size="10" middle>
           {todoItem.text}
         </MDBCol>
-        <MDBCol size="2" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <Checkbox type="checkbox" onClick={() => setTodoDone(todoItem.id)} disabled={todoItem.completed} />
-          <MDBIcon style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} size="2x" className="red-text" label="delete" name="delete" aria-label="Remove" onClick={() => removeItem(todoItem.id)} icon="trash" />
+        <MDBCol size="2" className="todo_items_right">
+          <Checkbox type="checkbox" onClick={() => onSetItemCompleted(todoItem.id)} disabled={isCompleted} />
+          <MDBIcon
+            size="2x"
+            className="red-text remove_icon"
+            label="delete"
+            name="delete"
+            aria-label="Remove"
+            onClick={() => onRemoveItem(todoItem.id)}
+            icon="trash"
+          />
         </MDBCol>
       </MDBRow>
     </MDBListGroupItem>
@@ -39,6 +50,6 @@ TodoItem.propTypes = {
     text: PropTypes.string,
     completed: PropTypes.bool,
   }).isRequired,
-  removeItem: PropTypes.func.isRequired,
-  setTodoDone: PropTypes.func.isRequired,
+  onRemoveItem: PropTypes.func.isRequired,
+  onSetItemCompleted: PropTypes.func.isRequired,
 };

@@ -2,8 +2,8 @@
 
 exports[`<TodoItem /> renders matches snapshot 1`] = `
 <TodoItem
-  removeItem={[MockFunction]}
-  setTodoDone={[MockFunction]}
+  onRemoveItem={[MockFunction]}
+  onSetItemCompleted={[MockFunction]}
   todoItem={
     Object {
       "completed": false,

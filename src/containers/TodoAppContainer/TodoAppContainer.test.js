@@ -15,9 +15,9 @@ describe('<TodoAppContainer />', () => {
     props = {
       todoItems: [
       ],
-      addTodo: jest.fn(),
-      removeItem: jest.fn(),
-      setTodoDone: jest.fn(),
+      onAddItem: jest.fn(),
+      onRemoveItem: jest.fn(),
+      onSetItemCompleted: jest.fn(),
     };
     wrapper = mount(<TodoAppContainer {...props} />);
   });

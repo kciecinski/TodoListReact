@@ -8,7 +8,7 @@ const shortid = require('shortid');
 const todoReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_TODO':
-      return [...state, action.item];
+      return [...state, action.payload];
     case 'REMOVE_TODO':
       return state.filter(item => item.id !== action.id);
     case 'SET_DONE':
@@ -27,22 +27,26 @@ const todoReducer = (state, action) => {
 export default function TodoAppContainer() {
   const [todos, dispatch] = useReducer(todoReducer, []);
 
-  const addTodo = (todoItemText) => {
-    dispatch({ type: 'ADD_TODO', item: { id: shortid.generate(), text: todoItemText, completed: false } });
+  const addItem = (todoItemText) => {
+    dispatch({ type: 'ADD_TODO', payload: { id: shortid.generate(), text: todoItemText, completed: false } });
   };
 
   const removeTodo = (id) => {
     dispatch({ type: 'REMOVE_TODO', id });
   };
 
-  const setTodoDone = (id) => {
+  const setItemCompleted = (id) => {
     dispatch({ type: 'SET_DONE', id });
   };
 
   return (
     <AppLayout>
-      <TodoList todoItems={todos} removeItem={removeTodo} setTodoDone={setTodoDone} />
-      <TodoForm addTodo={addTodo} />
+      <TodoList
+        todoItems={todos}
+        onRemoveItem={removeTodo}
+        onSetItemCompleted={setItemCompleted}
+      />
+      <TodoForm onAddItem={addItem} />
     </AppLayout>
   );
 }

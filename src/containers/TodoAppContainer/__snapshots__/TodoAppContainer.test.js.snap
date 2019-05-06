@@ -2,9 +2,9 @@
 
 exports[`<TodoAppContainer /> matches snapshot 1`] = `
 <TodoAppContainer
-  addTodo={[MockFunction]}
-  removeItem={[MockFunction]}
-  setTodoDone={[MockFunction]}
+  onAddItem={[MockFunction]}
+  onRemoveItem={[MockFunction]}
+  onSetItemCompleted={[MockFunction]}
   todoItems={Array []}
 >
   <AppLayout>
@@ -89,8 +89,8 @@ exports[`<TodoAppContainer /> matches snapshot 1`] = `
             }
           >
             <TodoList
-              removeItem={[Function]}
-              setTodoDone={[Function]}
+              onRemoveItem={[Function]}
+              onSetItemCompleted={[Function]}
               todoItems={Array []}
             >
               <ListGroup
@@ -102,7 +102,7 @@ exports[`<TodoAppContainer /> matches snapshot 1`] = `
               </ListGroup>
             </TodoList>
             <TodoForm
-              addTodo={[Function]}
+              onAddItem={[Function]}
             >
               <div>
                 <Input

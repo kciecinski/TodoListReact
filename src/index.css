@@ -12,3 +12,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.btn_circle{
+  float: right;
+  border-radius: 100%;
+  padding: 25px
+}
+.todo_items_right{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.todo_items_left{
+  word-break: break-word;
+  padding-right: 45px;
+}
+
+.remove_icon{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.title{
+  font-size: 45px;
+  margin-bottom: 0px;
+  font-weight: 500;
+}
+
+.todo_list{
+  margin-top: 15px;
+}
+
+.todo_form{
+  margin-top: '3rem';
+}

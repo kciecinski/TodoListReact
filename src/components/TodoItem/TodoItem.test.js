@@ -16,8 +16,8 @@ describe('<TodoItem />', () => {
         id: 'NJ1HBA5TN',
         text: 'casd',
       },
-      removeItem: jest.fn(),
-      setTodoDone: jest.fn(),
+      onRemoveItem: jest.fn(),
+      onSetItemCompleted: jest.fn(),
     };
     wrapper = mount(<TodoItem {...props} />);
   });

@@ -6,8 +6,8 @@ exports[`<TodoList /> matches snapshot 1`] = `
 >
   <TodoItem
     key="NJ1HBA5TN"
-    removeItem={[MockFunction]}
-    setTodoDone={[MockFunction]}
+    onRemoveItem={[MockFunction]}
+    onSetItemCompleted={[MockFunction]}
     todoItem={
       Object {
         "completed": false,
@@ -18,8 +18,8 @@ exports[`<TodoList /> matches snapshot 1`] = `
   />
   <TodoItem
     key="NJ1HBA5TN"
-    removeItem={[MockFunction]}
-    setTodoDone={[MockFunction]}
+    onRemoveItem={[MockFunction]}
+    onSetItemCompleted={[MockFunction]}
     todoItem={
       Object {
         "completed": false,

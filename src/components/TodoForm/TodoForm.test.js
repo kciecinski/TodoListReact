@@ -11,29 +11,29 @@ describe('<TodoForm />', () => {
   let props;
   beforeEach(() => {
     props = {
-      addTodo: jest.fn(),
+      onAddItem: jest.fn(),
     };
     wrapper = shallow(<TodoForm {...props} />);
   });
 
-  it('calls addTodo correctly on click', () => {
+  it('calls onAddItem correctly on click', () => {
     wrapper.find('Input').simulate('change', { target: { value: 'Buy Stuff' } });
     wrapper.find('Button').simulate('click');
 
-    expect(props.addTodo).toHaveBeenCalledWith('Buy Stuff');
+    expect(props.onAddItem).toHaveBeenCalledWith('Buy Stuff');
   });
 
-  it('dont calls addTodo when empty', () => {
+  it('dont calls onAddItem when empty', () => {
     wrapper.find('Button').simulate('click');
 
-    expect(props.addTodo).not.toHaveBeenCalledWith('Buy Stuff');
+    expect(props.onAddItem).not.toHaveBeenCalledWith('Buy Stuff');
   });
 
-  it('calls addTodo correctly on keypress', () => {
+  it('calls onAddItem correctly on keypress', () => {
     wrapper.find('Input').simulate('change', { target: { value: 'Buy Other Stuff' } });
     wrapper.find('Input').simulate('keypress', { which: 13 });
 
-    expect(props.addTodo).toHaveBeenCalledWith('Buy Other Stuff');
+    expect(props.onAddItem).toHaveBeenCalledWith('Buy Other Stuff');
   });
 
   it('renders matches snapshot', () => {
