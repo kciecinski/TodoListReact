@@ -49,7 +49,11 @@ TodoItem.propTypes = {
     id: PropTypes.string,
     text: PropTypes.string,
     completed: PropTypes.bool,
-  }).isRequired,
+  }),
   onRemoveItem: PropTypes.func.isRequired,
   onSetItemCompleted: PropTypes.func.isRequired,
+};
+
+TodoItem.defaultProps = {
+  todoItem: {},
 };

@@ -1,32 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TodoList /> matches snapshot 1`] = `
+exports[`<TodoList /> renders correctly with default props 1`] = `
 <ListGroup
   tag="ul"
->
-  <TodoItem
-    key="NJ1HBA5TN"
-    onRemoveItem={[MockFunction]}
-    onSetItemCompleted={[MockFunction]}
-    todoItem={
-      Object {
-        "completed": false,
-        "id": "NJ1HBA5TN",
-        "text": "casd",
-      }
-    }
-  />
-  <TodoItem
-    key="NJ1HBA5TN"
-    onRemoveItem={[MockFunction]}
-    onSetItemCompleted={[MockFunction]}
-    todoItem={
-      Object {
-        "completed": false,
-        "id": "NJ1HBA5TN",
-        "text": "casd",
-      }
-    }
-  />
-</ListGroup>
+/>
 `;

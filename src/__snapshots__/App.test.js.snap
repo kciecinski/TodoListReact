@@ -42,12 +42,7 @@ exports[`renders without crashing 1`] = `
                         className="navbar-brand"
                       >
                         <h1
-                          style={
-                            Object {
-                              "fontSize": "45px",
-                              "marginBottom": "0px",
-                            }
-                          }
+                          className="title"
                         >
                           Todo List
                         </h1>
@@ -67,25 +62,16 @@ exports[`renders without crashing 1`] = `
             className="container"
           >
             <Col
+              className="todo_list"
               lg={null}
               md={null}
               sm={null}
-              style={
-                Object {
-                  "marginTop": "15px",
-                }
-              }
               tag="div"
               xl={null}
               xs={null}
             >
               <div
-                className="col"
-                style={
-                  Object {
-                    "marginTop": "15px",
-                  }
-                }
+                className="col todo_list"
               >
                 <TodoList
                   onRemoveItem={[Function]}
@@ -105,7 +91,7 @@ exports[`renders without crashing 1`] = `
                 >
                   <div>
                     <Input
-                      className=""
+                      className="todo_form"
                       containerClass=""
                       disabled={false}
                       error=""
@@ -133,7 +119,7 @@ exports[`renders without crashing 1`] = `
                         className="md-form form-lg"
                       >
                         <input
-                          className="form-control form-control-lg"
+                          className="form-control form-control-lg todo_form"
                           disabled={false}
                           onBlur={[Function]}
                           onChange={[Function]}
@@ -155,31 +141,18 @@ exports[`renders without crashing 1`] = `
                     </Input>
                     <Button
                       aria-label="Add"
+                      className="btn_circle"
                       color="pink"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "borderRadius": "100%",
-                          "float": "right",
-                          "padding": "25px",
-                        }
-                      }
                       tag="button"
                       type="submit"
                     >
                       <button
                         aria-label="Add"
-                        className="btn btn-pink Ripple-parent"
+                        className="btn btn-pink Ripple-parent btn_circle"
                         onClick={[Function]}
                         onMouseUp={[Function]}
                         onTouchStart={[Function]}
-                        style={
-                          Object {
-                            "borderRadius": "100%",
-                            "float": "right",
-                            "padding": "25px",
-                          }
-                        }
                         type="submit"
                       >
                         <Fa

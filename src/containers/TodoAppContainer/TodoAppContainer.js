@@ -23,30 +23,17 @@ const todoReducer = (state, action) => {
   }
 };
 
-
 export default function TodoAppContainer() {
   const [todos, dispatch] = useReducer(todoReducer, []);
-
-  const addItem = (todoItemText) => {
-    dispatch({ type: 'ADD_TODO', payload: { id: shortid.generate(), text: todoItemText, completed: false } });
-  };
-
-  const removeTodo = (id) => {
-    dispatch({ type: 'REMOVE_TODO', id });
-  };
-
-  const setItemCompleted = (id) => {
-    dispatch({ type: 'SET_DONE', id });
-  };
 
   return (
     <AppLayout>
       <TodoList
         todoItems={todos}
-        onRemoveItem={removeTodo}
-        onSetItemCompleted={setItemCompleted}
+        onRemoveItem={id => dispatch({ type: 'REMOVE_TODO', id })}
+        onSetItemCompleted={id => dispatch({ type: 'SET_DONE', id })}
       />
-      <TodoForm onAddItem={addItem} />
+      <TodoForm onAddItem={todoItemText => dispatch({ type: 'ADD_TODO', payload: { id: shortid.generate(), text: todoItemText, completed: false } })} />
     </AppLayout>
   );
 }

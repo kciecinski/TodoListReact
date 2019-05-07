@@ -8,51 +8,40 @@ import TodoAppContainer from './TodoAppContainer';
 
 configure({ adapter: new Adapter() });
 
+const addItem = (wrapper) => {
+  wrapper.find('[type="text"]').last().simulate('change', { target: { value: 'Buy Some Stuff' } });
+  wrapper.find('[type="text"]').last().simulate('keypress', { which: 13 });
+};
+
 describe('<TodoAppContainer />', () => {
   let wrapper;
-  let props;
   beforeEach(() => {
-    props = {
-      todoItems: [
-      ],
-      onAddItem: jest.fn(),
-      onRemoveItem: jest.fn(),
-      onSetItemCompleted: jest.fn(),
-    };
-    wrapper = mount(<TodoAppContainer {...props} />);
+    wrapper = mount(<TodoAppContainer />);
   });
 
-  it('add Todo correctly', () => {
+  it('add item correctly', () => {
     wrapper.find('[type="text"]').last().simulate('change', { target: { value: 'Buy Other Stuff' } });
     wrapper.find('[type="text"]').last().simulate('keypress', { which: 13 });
 
     expect(wrapper.find('TodoItem')).toHaveLength(1);
-    expect(wrapper.find('TodoItem .col-10').text()).toBe('Buy Other Stuff');
   });
 
-  it('remove Todo correctly', () => {
-    wrapper.find('[type="text"]').last().simulate('change', { target: { value: 'Buy Other Stuff' } });
-    wrapper.find('[type="text"]').last().simulate('keypress', { which: 13 });
-
-    wrapper.find('[type="text"]').last().simulate('change', { target: { value: 'Buy Diffrent Stuff' } });
-    wrapper.find('[type="text"]').last().simulate('keypress', { which: 13 });
-
+  it('remove item correctly', () => {
+    addItem(wrapper);
+    addItem(wrapper);
     wrapper.find('[label="delete"]').first().simulate('click');
 
     expect(wrapper.find('TodoItem')).toHaveLength(1);
-    expect(wrapper.find('TodoItem .col-10').text()).toBe('Buy Diffrent Stuff');
   });
 
-  it('sets Done correctly', () => {
-    wrapper.find('[type="text"]').last().simulate('change', { target: { value: 'Buy Other Stuff' } });
-    wrapper.find('[type="text"]').last().simulate('keypress', { which: 13 });
-
+  it('sets checkbox disable after checkbox is clicked', () => {
+    addItem(wrapper);
     wrapper.find('input[type="checkbox"]').simulate('click');
 
     expect(wrapper.find('input[type="checkbox"]').props().disabled).toBe(true);
   });
 
-  it('matches snapshot', () => {
+  it('renders correctly', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

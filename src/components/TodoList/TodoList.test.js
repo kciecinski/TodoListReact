@@ -7,31 +7,29 @@ import TodoList from './TodoList';
 configure({ adapter: new Adapter() });
 
 describe('<TodoList />', () => {
-  let wrapper;
-  let props;
-  beforeEach(() => {
-    props = {
+  it('renders correct number of items', () => {
+    const props = {
       todoItems: [{
         completed: false,
         id: 'NJ1HBA5TN',
-        text: 'casd',
+        text: 'Buy Apple',
       }, {
         completed: false,
         id: 'NJ1HBA5TN',
-        text: 'casd',
+        text: 'Buy Banana nana nana',
       },
       ],
       onRemoveItem: jest.fn(),
       onSetItemCompleted: jest.fn(),
     };
-    wrapper = shallow(<TodoList {...props} />);
-  });
+    const wrapper = shallow(<TodoList {...props} />);
 
-  it('renders 2 items', () => {
     expect(wrapper.find('TodoItem')).toHaveLength(2);
   });
 
-  it('matches snapshot', () => {
+  it('renders correctly with default props', () => {
+    const wrapper = shallow(<TodoList />);
+
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

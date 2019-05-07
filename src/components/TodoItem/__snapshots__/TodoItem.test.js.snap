@@ -1,231 +1,167 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TodoItem /> renders matches snapshot 1`] = `
-<TodoItem
-  onRemoveItem={[MockFunction]}
-  onSetItemCompleted={[MockFunction]}
-  todoItem={
+exports[`<TodoItem /> renders correctly with default props 1`] = `
+<ListGroupItem
+  style={
     Object {
-      "completed": false,
-      "id": "NJ1HBA5TN",
-      "text": "casd",
+      "marginTop": "1.5em",
     }
   }
+  tag="li"
 >
-  <ListGroupItem
-    style={Object {}}
-    tag="li"
+  <Row
+    tag="div"
   >
-    <li
-      className="list-group-item"
-      style={Object {}}
+    <Col
+      className="todo_items_left"
+      lg={null}
+      md={null}
+      middle={true}
+      size="10"
+      sm={null}
+      tag="div"
+      xl={null}
+      xs={null}
+    />
+    <Col
+      className="todo_items_right"
+      lg={null}
+      md={null}
+      size="2"
+      sm={null}
+      tag="div"
+      xl={null}
+      xs={null}
     >
-      <Row
-        tag="div"
-      >
-        <div
-          className="row"
-        >
-          <Col
-            lg={null}
-            md={null}
-            size="10"
-            sm={null}
-            style={
-              Object {
-                "alignItems": "center",
-                "display": "flex",
-              }
-            }
-            tag="div"
-            xl={null}
-            xs={null}
-          >
-            <div
-              className="col-10"
-              style={
-                Object {
-                  "alignItems": "center",
-                  "display": "flex",
-                }
-              }
-            >
-              casd
-            </div>
-          </Col>
-          <Col
-            lg={null}
-            md={null}
-            size="2"
-            sm={null}
-            style={
-              Object {
-                "display": "flex",
-                "justifyContent": "flex-end",
-              }
-            }
-            tag="div"
-            xl={null}
-            xs={null}
-          >
-            <div
-              className="col-2"
-              style={
-                Object {
-                  "display": "flex",
-                  "justifyContent": "flex-end",
-                }
-              }
-            >
-              <RippledComponent
-                checked={false}
-                className=""
-                disabled={false}
-                indeterminate={false}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={Object {}}
-                type="checkbox"
-                unbounded={true}
-              >
-                <Checkbox
-                  checked={false}
-                  className=""
-                  disabled={false}
-                  indeterminate={false}
-                  initRipple={[Function]}
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  style={Object {}}
-                  type="checkbox"
-                  unbounded={true}
-                >
-                  <div
-                    className="mdc-checkbox mdc-checkbox--upgraded"
-                    onAnimationEnd={[Function]}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                    style={Object {}}
-                    type="checkbox"
-                  >
-                    <NativeControl
-                      aria-checked="false"
-                      checked={false}
-                      disabled={false}
-                      onChange={[Function]}
-                      rippleActivatorRef={
-                        Object {
-                          "current": <input
-                            aria-checked="false"
-                            class="mdc-checkbox__native-control"
-                            type="checkbox"
-                          />,
-                        }
-                      }
-                    >
-                      <input
-                        aria-checked="false"
-                        checked={false}
-                        className="mdc-checkbox__native-control"
-                        disabled={false}
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                    </NativeControl>
-                    <div
-                      className="mdc-checkbox__background"
-                    >
-                      <svg
-                        className="mdc-checkbox__checkmark"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          className="mdc-checkbox__checkmark-path"
-                          d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                          fill="none"
-                        />
-                      </svg>
-                      <div
-                        className="mdc-checkbox__mixedmark"
-                      />
-                    </div>
-                  </div>
-                </Checkbox>
-              </RippledComponent>
-              <Fa
-                aria-label="Remove"
-                border={false}
-                brand={false}
-                className="red-text"
-                fab={false}
-                fal={false}
-                far={false}
-                fixed={false}
-                flip=""
-                icon="trash"
-                inverse=""
-                label="delete"
-                light={false}
-                list={false}
-                name="delete"
-                onClick={[Function]}
-                pull=""
-                pulse={false}
-                regular={false}
-                rotate=""
-                size="2x"
-                spin={false}
-                stack=""
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
-                }
-              >
-                <i
-                  aria-label="Remove"
-                  className="fa fa-trash fa-2x red-text"
-                  label="delete"
-                  name="delete"
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "display": "flex",
-                    }
-                  }
-                />
-              </Fa>
-            </div>
-          </Col>
-        </div>
-      </Row>
-    </li>
-  </ListGroupItem>
-</TodoItem>
+      <RippledComponent
+        checked={false}
+        className=""
+        disabled={false}
+        indeterminate={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        style={Object {}}
+        type="checkbox"
+        unbounded={true}
+      />
+      <Fa
+        aria-label="Remove"
+        border={false}
+        brand={false}
+        className="red-text remove_icon"
+        fab={false}
+        fal={false}
+        far={false}
+        fixed={false}
+        flip=""
+        icon="trash"
+        inverse=""
+        label="delete"
+        light={false}
+        list={false}
+        name="delete"
+        onClick={[Function]}
+        pull=""
+        pulse={false}
+        regular={false}
+        rotate=""
+        size="2x"
+        spin={false}
+        stack=""
+      />
+    </Col>
+  </Row>
+</ListGroupItem>
+`;
+
+exports[`<TodoItem /> renders correctly with props 1`] = `
+<ListGroupItem
+  style={
+    Object {
+      "marginTop": "1.5em",
+    }
+  }
+  tag="li"
+>
+  <Row
+    tag="div"
+  >
+    <Col
+      className="todo_items_left"
+      lg={null}
+      md={null}
+      middle={true}
+      size="10"
+      sm={null}
+      tag="div"
+      xl={null}
+      xs={null}
+    >
+      Buy Oranges and Apples
+    </Col>
+    <Col
+      className="todo_items_right"
+      lg={null}
+      md={null}
+      size="2"
+      sm={null}
+      tag="div"
+      xl={null}
+      xs={null}
+    >
+      <RippledComponent
+        checked={false}
+        className=""
+        disabled={false}
+        indeterminate={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        style={Object {}}
+        type="checkbox"
+        unbounded={true}
+      />
+      <Fa
+        aria-label="Remove"
+        border={false}
+        brand={false}
+        className="red-text remove_icon"
+        fab={false}
+        fal={false}
+        far={false}
+        fixed={false}
+        flip=""
+        icon="trash"
+        inverse=""
+        label="delete"
+        light={false}
+        list={false}
+        name="delete"
+        onClick={[Function]}
+        pull=""
+        pulse={false}
+        regular={false}
+        rotate=""
+        size="2x"
+        spin={false}
+        stack=""
+      />
+    </Col>
+  </Row>
+</ListGroupItem>
 `;

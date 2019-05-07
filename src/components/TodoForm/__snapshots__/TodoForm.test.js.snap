@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TodoForm /> renders matches snapshot 1`] = `
+exports[`<TodoForm /> renders correctly 1`] = `
 <div>
   <Input
-    className=""
+    className="todo_form"
     containerClass=""
     disabled={false}
     error=""
@@ -29,15 +29,69 @@ exports[`<TodoForm /> renders matches snapshot 1`] = `
   />
   <Button
     aria-label="Add"
+    className="btn_circle"
     color="pink"
     onClick={[Function]}
-    style={
-      Object {
-        "borderRadius": "100%",
-        "float": "right",
-        "padding": "25px",
-      }
-    }
+    tag="button"
+    type="submit"
+  >
+    <Fa
+      border={false}
+      brand={false}
+      className=""
+      fab={false}
+      fal={false}
+      far={false}
+      fixed={false}
+      flip=""
+      icon="plus"
+      inverse=""
+      light={false}
+      list={false}
+      pull=""
+      pulse={false}
+      regular={false}
+      rotate=""
+      size="2x"
+      spin={false}
+      stack=""
+    />
+  </Button>
+</div>
+`;
+
+exports[`<TodoForm /> renders correctly with defoult props 1`] = `
+<div>
+  <Input
+    className="todo_form"
+    containerClass=""
+    disabled={false}
+    error=""
+    filled={false}
+    gap={false}
+    group={false}
+    icon=""
+    iconBrand={false}
+    iconClass=""
+    iconLight={false}
+    iconRegular={false}
+    label="Add Tasks"
+    labelClass=""
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    outline={false}
+    size="lg"
+    success=""
+    tag="input"
+    type="text"
+    validate={false}
+    valueDefault=""
+  />
+  <Button
+    aria-label="Add"
+    className="btn_circle"
+    color="pink"
+    onClick={[Function]}
     tag="button"
     type="submit"
   >

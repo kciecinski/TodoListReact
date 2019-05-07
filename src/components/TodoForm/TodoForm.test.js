@@ -29,14 +29,19 @@ describe('<TodoForm />', () => {
     expect(props.onAddItem).not.toHaveBeenCalledWith('Buy Stuff');
   });
 
-  it('calls onAddItem correctly on keypress', () => {
+  it('calls onAddItem correctly on pressing enter', () => {
     wrapper.find('Input').simulate('change', { target: { value: 'Buy Other Stuff' } });
     wrapper.find('Input').simulate('keypress', { which: 13 });
 
     expect(props.onAddItem).toHaveBeenCalledWith('Buy Other Stuff');
   });
 
-  it('renders matches snapshot', () => {
+  it('renders correctly with defoult props', () => {
+    const defoultWrapper = shallow(<TodoForm />);
+    expect(toJson(defoultWrapper)).toMatchSnapshot();
+  });
+
+  it('renders correctly', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });
